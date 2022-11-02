@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val intent = Intent(this, DownloadService::class.java).also {
             it.putExtra("shouldRun", false)
         }
-        ContextCompat.startForegroundService(this, intent)
+        stopService(intent)
     }
 
 }
