@@ -190,6 +190,7 @@ class DownloadService : LifecycleService() {
     override fun onDestroy() {
         downloadJob?.cancel()
         notificationManager.cancelAll()
+        stopForeground(true)
         if (deleteFile)
             file?.delete()
         super.onDestroy()
